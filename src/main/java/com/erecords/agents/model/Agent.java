@@ -13,7 +13,7 @@ public class Agent {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private double id;
+	private long id;
 	
 	@Column(name = "firstName")
 	private String firstName;
@@ -46,7 +46,7 @@ public class Agent {
 	public double getId() {
 		return id;
 	}
-	public void setId(double id) {
+	public void setId(long id) {
 		this.id = id;
 	}
 	public String getFirstName() {
