@@ -1,13 +1,43 @@
 package com.erecords.agents.model;
 
+import javax.persistence.GenerationType;
+
+@Entity
+@Table(name = "agents")
 public class Agent {
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private double id;
+	
+	@Column(name = "firstName")
 	private String firstName;
+	
+	@Column(name = "lastName")
 	private String lastName;
+	
+	@Column(name = "codeName")
 	private String codeName;
+	
+	@Column(name = "handlerOps")
 	private String handlerOps;
 	
+	@Column (name = "authCode")
+	private int authCode;
 	
+	
+	public Agent() {
+		
+	}
+	
+	public Agent(String firstName, String lastName, String codeName, String handlerOps, int authCode) {
+		super();
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.codeName = codeName;
+		this.handlerOps = handlerOps;
+		this.authCode = authCode;
+	}
 	public double getId() {
 		return id;
 	}
@@ -44,6 +74,6 @@ public class Agent {
 	public void setAuthCode(int authCode) {
 		this.authCode = authCode;
 	}
-	private int authCode;
+	
 
 }
